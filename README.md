@@ -1,4 +1,4 @@
-en progreso una vez lista podras:
+En progreso una vez lista podras:
 
 Dogs APP
 
