@@ -1,169 +1,116 @@
-<p align='left'>
-    <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
-</p>
+en progreso una vez lista podras:
 
-# Individual Project - Henry Dogs
+Dogs APP
 
-<p align="left">
-  <img height="200" src="./dog.png" />
-</p>
 
-## Objetivos del Proyecto
+En esta aplicación podrás ver distintas razas de perros junto con los detalles de las mismas utilizando la api externa the dog api y a partir de ella poder, entre otras cosas:
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
 
-## Horarios y Fechas
 
-El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
 
-## Comenzando
+Buscar razas de perros
 
- 1. Forkear el repositorio para tener una copia del mismo en sus cuentas
- 2. Clonar el repositorio en sus computadoras para comenzar a trabajar
 
-Tendrán un `boilerplate` con la estructura general tanto del servidor como de cliente.
+Filtrarlos / Ordenarlos
 
-__IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
-Actualmente las versiónes necesarias son:
+Agregar nuevas razas
 
- * __Node__: 12.18.3 o mayor
- * __NPM__: 6.14.16 o mayor
 
-Para verificar que versión tienen instalada:
 
-> node -v
->
-> npm -v
 
-## BoilerPlate
+- Detalle de raza
 
-El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
 
-En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
 
-```
+detalle_perrito
+
+
+
+- Crear una raza
+
+
+
+create_dog
+
+
+
+
+Comenzando 🚀
+
+
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+
+
+
+IMPORTANTE: Para poder utilizar esta API es necesario crear una cuenta para obtener una API Key que deberá ser incluida en el archivo .env
+
+
+
+El archivo .env (carpeta api) debe tener la siguiente forma:
+
+
+
 DB_USER=usuariodepostgres
+
+
 DB_PASSWORD=passwordDePostgres
+
+
 DB_HOST=localhost
-```
 
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
 
-Adicionalmente será necesario que creen desde psql una base de datos llamada `dogs`
+API_KEY=tu API key
 
-El contenido de `client` fue creado usando: Create React App.
 
-## Enunciado
+DB_NAME=dogs
 
-La idea general es crear una aplicación en la cual se puedan ver distintas razas de perro junto con información relevante de las mismas utilizando la api externa [the dog api](https://thedogapi.com/) y a partir de ella poder, entre otras cosas:
 
-  - Buscar perros
-  - Filtrarlos / Ordenarlos
-  - Agregar nuevos perros
+PORT=3001
 
-__IMPORTANTE__: Para poder utilizar esta API externa es necesario crearse una cuenta para obtener una API Key que luego debera ser incluida en todos los request que hagamos a rawg simplemente agregando `?api_key={YOUR_API_KEY}` al final de cada endpoint. Agregar la clave en el archivo `.env` para que la misma no se suba al repositorio por cuestiones de seguridad y utilizarla desde allí.
 
-__IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados sino que deben realizarlo ustedes mismos. En particular alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
+Adicionalmente será necesario que crees desde psql una base de datos llamada dogs
 
-### Únicos Endpoints/Flags que pueden utilizar
 
-  - GET https://api.thedogapi.com/v1/breeds
-  - GET https://api.thedogapi.com/v1/breeds/search?q={raza_perro}
 
-### Requerimientos mínimos:
+Instalación 🔧
 
-A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
 
-__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
+Clona el repo
 
-#### Tecnologías necesarias:
-- [ ] React
-- [ ] Redux
-- [ ] Express
-- [ ] Sequelize - Postgres
 
-#### Frontend
+git clone https://github.com/memm1991/DogsApp.git
 
-Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
 
-__Pagina inicial__: deben armar una landing page con
-- [ ] Alguna imagen de fondo representativa al proyecto
-- [ ] Botón para ingresar al home (`Ruta principal`)
+Instala los paquetes
 
-__Ruta principal__: debe contener
-- [ ] Input de búsqueda para encontrar razas de perros por nombre
-- [ ] Área donde se verá el listado de razas de perros. Deberá mostrar su:
-  - Imagen
-  - Nombre
-  - Temperamento
-- [ ] Botones/Opciones para filtrar por por temperamento y por raza existente o agregada por nosotros
-- [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente las razas de perro por orden alfabético y por peso
-- [ ] Paginado para ir buscando y mostrando las siguientes razas
 
-__IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto las razas de perros traidas desde la API como así también las de la base de datos.
+npm install
 
-__Ruta de detalle de raza de perro__: debe contener
-- [ ] Los campos mostrados en la ruta principal para cada raza (imagen, nombre y temperamento)
-- [ ] Altura
-- [ ] Peso
-- [ ] Años de vida
 
-__Ruta de creación de raza de perro__: debe contener
-- [ ] Un formulario __controlado__ con los siguientes campos
-  - Nombre
-  - Altura (Diferenciar entre altura mínima y máxima)
-  - Peso (Diferenciar entre peso mínimo y máximo)
-  - Años de vida
-- [ ] Posibilidad de seleccionar/agregar uno o más temperamentos
-- [ ] Botón/Opción para crear una nueva raza de perro
+Inicia tanto el back (carpeta api), como el front (carpeta client)
 
-#### Base de datos
 
-El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterísco deben ser obligatorias):
+npm start
 
-- [ ] Raza con las siguientes propiedades:
-  - ID *
-  - Nombre *
-  - Altura *
-  - Peso *
-  - Años de vida
-- [ ] Temperamento con las siguientes propiedades:
-  - ID
-  - Nombre
 
-La relación entre ambas entidades debe ser de muchos a muchos ya que una raza de perro puede tener varios "temperamentos" en simultaneo y, a su vez, un "temperamento" puede corresponder a múltiples razas de perro distintas. Por ejemplo la raza `pug` es docil, inteligente y sociable (entre otras). Pero a su vez existen otras razas de perro que también son sociables o inteligentes.
+Construido con 🛠️
 
-__IMPORTANTE__: Pensar como modelar los IDs de las razas de perros en la base de datos. Existen distintas formas correctas de hacerlo pero tener en cuenta que cuando hagamos click en alguna, esta puede provenir de la API o de la Base de Datos por lo que cuando muestre su detalle no debería haber ambigüedad en cual se debería mostrar. Por ejemplo si en la API la raza `Pug` tiene id = 1 y en nuestra base de datos creamos una nueva raza `Henry Pug` con id = 1, ver la forma de diferenciarlas cuando querramos acceder al detalle de la misma.
 
-#### Backend
+ React
+ 
+ 
+ Redux
+ 
+ 
+ Express
+ 
+ 
+ Sequelize - Postgres
+ 
+ 
+Licencia 📄
 
-Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
 
-__IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y paginados brindados por la API externa, todas estas funcionalidades tienen que implementarlas ustedes.
+Este proyecto fue creado con fines educativos, no tiene fines de lucro - sientete libre de usarlo
 
-- [ ] __GET /dogs__:
-  - Obtener un listado de las primeras 8 razas de perro
-  - Debe devolver solo los datos necesarios para la ruta principal
-- [ ] __GET /dogs?name="..."__:
-  - Obtener un listado de las primeras 8 razas de perro que contengan la palabra ingresada como query parameter
-  - Si no existe ninguna raza de perro mostrar un mensaje adecuado
-- [ ] __GET /dogs/{idRaza}__:
-  - Obtener el detalle de una raza de perro en particular
-  - Debe traer solo los datos pedidos en la ruta de detalle de raza de perro
-  - Incluir los temperamentos asociados
-- [ ] __GET /temperament__:
-  - Obtener todos los temperamentos posibles
-  - En una primera instancia deberán obtenerlos desde la API externa y guardarlos en su propia base de datos y luego ya utilizarlos desde allí
-- [ ] __POST /dog__:
-  - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de raza de perro por body
-  - Crea una raza de perro en la base de datos
-
-#### Testing
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
